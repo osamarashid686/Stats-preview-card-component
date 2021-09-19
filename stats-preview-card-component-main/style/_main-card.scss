@@ -1,0 +1,78 @@
+@mixin flexcol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+body{
+    padding: 50px 20px;
+}
+.main-card{
+    @include flexcol;
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+    background-color: $card-bg-color;
+    border-radius: 10px 10px 0 0;
+
+    .img-area{
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        background-color: $accent-color;
+
+        .desktop-img{display: none;} //desktop remove for mobile
+
+        .mobile-img{
+            width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+            mix-blend-mode: hard-light;
+        }
+    }
+
+    .txt-area{
+        margin-top: 40px;
+        
+        .hero-txt{
+            @include flexcol;
+
+            h1{
+                text-align: center;
+                font-size: 2rem;
+                color: white;
+                
+                span{
+                    color: $accent-color;
+                }
+            }
+            p{
+                width: 250px;
+                text-align: center;
+                font-size: 1rem;
+                color: rgb(175, 175, 175);
+                line-height: 25px;
+                margin-top: 20px;
+            }
+        }
+
+        .stat-txt{
+            @include flexcol;
+            
+            .table-column{
+                margin-top: 30px;
+                h1{
+                    color: white;
+                    font-size: 20px;
+                    font-weight: 700;
+                    text-align: center;
+
+                }
+                p{
+                    color: rgb(175, 175, 175);
+                    font-size: 12px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
